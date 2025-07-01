@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import LocationPrompt from './location/Location';
+import SignUp from './signUp/signUp';
+import InputField from './sharedcomponent/inputField';
+import SignIn from './signIn/signIn';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <LocationPrompt /> */}
+       {/* <SignUp></SignUp> */}
+       <SignIn></SignIn>
     </div>
+       
   );
 }
 
 export default App;
+
+
+
+
+
+
+

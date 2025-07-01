@@ -1,0 +1,282 @@
+.signup-container {
+    background-color: rgb(243, 134, 55);
+  
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+ 
+
+}
+
+.signup-container h1 {
+    color: orange;
+    text-align: center;
+}
+
+.signup-container {
+    align-items: center;
+}
+
+.signup-container p {
+    text-align: center;
+}
+#forget{
+    text-align: right;
+     margin-right: 70px;
+    margin-top: -10px;
+    font-size: 15px;
+}
+
+.highlight {
+    color: orange;
+    text-align: center;
+
+}
+
+form {
+    border: 10px solid white;
+  
+    padding: 20px;
+    width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    background-color: whitesmoke;
+    transition: transform 0.3s ease,box-shadow 0.3s ease;
+ 
+    align-items: center;
+}
+
+.box {
+    width: 30vw;
+  
+
+}
+@media (max-width: 480px) {
+
+    .signup-container h1 {
+   font-size: 17px;
+}
+.signup-container p {
+   font-size: 10px;
+}
+     .signup-container{
+    
+        width: 100%;
+        overflow-y: hidden;
+     }
+
+
+
+    form {
+   border: 10px solid white;
+ 
+    width: 260%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    background-color: whitesmoke;
+    transition: transform 0.3s ease,box-shadow 0.3s ease;
+
+}
+
+    .signup-container p {
+        font-size: 14px;
+    }
+}
+@media (width: 412px) {
+
+    .signup-container h1 {
+   font-size: 17px;
+}
+.signup-container p {
+   font-size: 10px;
+}
+     .signup-container{
+    
+        width: 100%;
+        overflow-y: hidden;
+     }
+
+ 
+    form {
+        overflow-x: hidden;
+    border: 10px solid white;
+ 
+    width: 150%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    background-color: whitesmoke;
+    transition: transform 0.3s ease,box-shadow 0.3s ease;
+ 
+    align-items: center;
+}
+
+    .signup-container p {
+        font-size: 14px;
+    }
+    .box {
+        margin-right: 33%;
+    width: 37vw;
+  
+
+}
+}
+
+@media (max-width: 430px) {
+
+    .signup-container h1 {
+   font-size: 17px;
+}
+.signup-container p {
+   font-size: 10px;
+}
+     .signup-container{
+    
+        width: 100%;
+        overflow-y: hidden;
+     }
+
+  
+
+    form {
+        overflow-x: hidden;
+     border: 10px solid white;
+ 
+    width: 150%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    background-color: whitesmoke;
+    transition: transform 0.3s ease,box-shadow 0.3s ease;
+ 
+    align-items: center;
+}
+
+    .signup-container p {
+        font-size: 14px;
+    }
+    .box {
+        margin-right: 33%;
+    width: 37vw;
+   
+
+}
+}
+
+@media (width: 540px) {
+
+    .signup-container h1 {
+   font-size: 17px;
+}
+.signup-container p {
+   font-size: 10px;
+}
+     .signup-container{
+    
+        width: 100%;
+        overflow-y: hidden;
+     }
+
+  
+
+    form {
+        overflow-x: hidden;
+   border: 10px solid white;
+ 
+    width: 150%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    background-color: whitesmoke;
+    transition: transform 0.3s ease,box-shadow 0.3s ease;
+ 
+    align-items: center;
+}
+
+    .signup-container p {
+        font-size: 14px;
+    }
+    .box {
+        margin-right: 33%;
+    width: 37vw;
+   
+
+}
+}
+@media (min-width: 768px) and (max-width: 853px) {
+    .signup-container h1 {
+   font-size: 34px;
+}
+.signup-container p {
+   font-size: 10px;
+}
+     .signup-container{
+    
+        width: 100%;
+        overflow-y: hidden;
+     }
+
+  
+
+    form {
+        overflow-x: hidden;
+    border: 10px solid rgb(247, 241, 231);
+    padding: 20%;
+    width: 150%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    background-color: whitesmoke;
+    transition: transform 0.3s ease,box-shadow 0.3s ease;
+ 
+    align-items: center;
+}
+
+    .signup-container p {
+        font-size: 14px;
+    }
+    .box {
+        margin-right: 33%;
+    width: 37vw;
+   
+
+}
+}
+
+@media ( min-width:912px) and (max-width: 1024px) {
+
+    .signup-container h1 {
+   font-size: 34px;
+}
+.signup-container p {
+   font-size: 16px;
+}
+     .signup-container{
+    
+        width: 100%;
+        overflow-y: hidden;
+     }
+
+  
+
+    form {
+        overflow-x: hidden;
+     border: 10px solid white;
+ 
+    width: 150%;
+    padding: 25%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    background-color: whitesmoke;
+    transition: transform 0.3s ease,box-shadow 0.3s ease;
+ 
+    align-items: center;
+}
+
+    .signup-container p {
+        font-size: 17px;
+    }
+    .box {
+        margin-right: 36%;
+    width: 37vw;
+   
+
+}
+}
