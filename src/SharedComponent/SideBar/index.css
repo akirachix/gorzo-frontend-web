@@ -32,13 +32,13 @@
 } 
 
  .navigation {
-    margin-top: 10em;
+    margin-top: 15em;
     padding: 0;
 }
 
 .navigation li {
     list-style: none;
-    margin: 2.5em 0;
+    margin: 1.5em 0;
     text-align: center;
 }
 
@@ -87,18 +87,7 @@
 
 }
 
-/* .close-btn{
-      display: none;
-  position: absolute;
-  top: 16px;
-  left: 5px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: white;
-  z-index: 5000;
 
-} */
 
 .hamburger,.close-btn{
   display: none;
@@ -150,6 +139,28 @@
 
 }
 
+@media (width: 1024px){
+
+   .navigation {
+    margin-top: 5em;
+    padding: 0;
+}
+
+.nav-link {
+  
+  font-size: 1.5em;
+}
+
+
+.sidebar {
+  
+  width: 310px;
+ 
+}
+
+
+}
+
 
 
 
@@ -169,7 +180,7 @@
 
 .nav-link:hover,
 .nav-link.active {
-  background-color: white;
+  background-color: #FFFFFF;
   color: #F57C00;
   font-weight: bold;
 }

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faUsers, faMoneyBillTrendUp, faList, faGear, faHome } from '@fortawesome/free-solid-svg-icons';
+import {  faUsers, faMoneyBillTrendUp, faList, faGear, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './index.css';
 
@@ -15,21 +15,18 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Show hamburger when sidebar is closed */}
       {!isOpen && (
         <button className="hamburger" onClick={toggleSidebar}>
           <FaBars />
         </button>
       )}
 
-      {/* Show close icon when sidebar is open */}
       {isOpen && (
         <button className="close-btn" onClick={toggleSidebar}>
           <FaTimes />
         </button>
       )}
 
-      {/* Sidebar */}
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
         <ul className="navigation">
           <li>
@@ -44,16 +41,11 @@ const Sidebar = () => {
               <span className="nav-label">Orders</span>
             </NavLink>
           </li>
+         
           <li>
-            <NavLink to="/vendors" className="nav-link" onClick={closeSidebar}>
-              <span className="nav-icon"><FontAwesomeIcon icon={faUser} /></span>
-              <span className="nav-label">Vendors</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/customers" className="nav-link" onClick={closeSidebar}>
+            <NavLink to="/users" className="nav-link" onClick={closeSidebar}>
               <span className="nav-icon"><FontAwesomeIcon icon={faUsers} /></span>
-              <span className="nav-label">Customers</span>
+              <span className="nav-label">Users</span>
             </NavLink>
           </li>
           <li>
