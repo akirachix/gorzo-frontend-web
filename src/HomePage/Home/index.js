@@ -1,6 +1,6 @@
 import React from "react";
 import './index.css';
-import Sidebar from "../../SharedComponent/SideBar";
+// import Sidebar from "../../SharedComponent/SideBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser, faUsers, faArrowTrendUp, faCartShopping, faCircleCheck, faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import GroupChart from "../GroupChart";
@@ -10,10 +10,10 @@ import SalesChart from "../SalesChart";
 
 
 
-function home() {
+function Home() {
   return (
     <div className="adminDashboard">
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       <div className="userData">
 
@@ -106,4 +106,4 @@ function home() {
 
 
 
-export default home;
+export default Home;
