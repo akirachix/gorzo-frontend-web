@@ -26,7 +26,7 @@ const Sidebar = () => {
           <FaTimes />
         </button>
       )}
-      
+
 
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
         <img src='Images/logohaba.png' id='habaLogo' alt='Haba Logo'/>
@@ -51,7 +51,7 @@ const Sidebar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/sales" className="nav-link" onClick={closeSidebar}>
+            <NavLink to="/salestracking" className="nav-link" onClick={closeSidebar}>
               <span className="nav-icon"><FontAwesomeIcon icon={faMoneyBillTrendUp} /></span>
               <span className="nav-label">Sales</span>
             </NavLink>
