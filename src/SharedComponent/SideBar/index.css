@@ -17,12 +17,7 @@
 }
 
 
-#habaLogo {
-    width: 8vw;
-    display: block;
-    margin: 0 auto;
-    padding-top: 10%;
-}
+
 
  #dashboardHeading {
     text-align: center;
@@ -32,7 +27,7 @@
 } 
 
  .navigation {
-    margin-top: 15em;
+    margin-top: 6em;
     padding: 0;
 }
 
@@ -88,6 +83,13 @@
 }
 
 
+#habaLogo{
+  width: 10vw;
+  padding-top: 30px ;
+}
+
+
+
 
 .hamburger,.close-btn{
   display: none;
@@ -134,15 +136,22 @@
         display: block;
   }
 
+  #habaLogo{
+  width: 25vw;
+  padding-top: 50px ;
+  padding-left: 30px;
+}
+
 
  
 
 }
 
+
 @media (width: 1024px){
 
    .navigation {
-    margin-top: 5em;
+    margin-top: 1em;
     padding: 0;
 }
 
@@ -156,6 +165,11 @@
   
   width: 310px;
  
+}
+    #habaLogo{
+  width: 24vw;
+  padding-top: 15px ;
+  padding-left: 30px;
 }
 
 
@@ -195,3 +209,14 @@
 .nav-label {
   flex: 1;
 }
+
+
+@media  only screen and (min-width: 769px) and (max-width:1000px){
+    #habaLogo{
+  width: 22vw;
+  padding-top: 50px ;
+  padding-left: 30px;
+}
+
+}
+

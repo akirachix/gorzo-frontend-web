@@ -16,18 +16,20 @@ const Sidebar = () => {
   return (
     <>
       {!isOpen && (
-        <button className="hamburger" onClick={toggleSidebar}>
+        <button className="hamburger" onClick={toggleSidebar} aria-label="Open menu">
           <FaBars />
         </button>
       )}
 
       {isOpen && (
-        <button className="close-btn" onClick={toggleSidebar}>
+        <button className="close-btn" onClick={toggleSidebar} aria-label="Close menu">
           <FaTimes />
         </button>
       )}
+      
 
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+        <img src='Images/logohaba.png' id='habaLogo' alt='Haba Logo'/>
         <ul className="navigation">
           <li>
             <NavLink to="/home" className="nav-link" onClick={closeSidebar}>
@@ -65,5 +67,8 @@ const Sidebar = () => {
     </>
   );
 };
+
+
+
 
 export default Sidebar;
