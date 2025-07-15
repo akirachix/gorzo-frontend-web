@@ -17,21 +17,40 @@ const renderWithRouter = (ui, { route = '/' } = {}) => {
 };
 
 describe('Sidebar Component', () => {
-   test('navigates to correct route on link click', () => {
-    renderWithRouter(
-      <>
-        <Sidebar />
-        <Routes>
-          <Route path="/users" element={<div>Users Page</div>} />
-        </Routes>
-      </>,
-      { route: '/' }
-    );
 
-    fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
-    fireEvent.click(screen.getByText(/users/i));
-    expect(screen.getByText(/users page/i)).toBeInTheDocument();
-  });
+test('navigates to correct routes for multiple sidebar links', () => {
+  renderWithRouter(
+    <>
+      <Sidebar />
+      <Routes>
+        <Route path="/home" element={<div>Dashboard Page</div>} />
+        <Route path="/users" element={<div>Users Page</div>} />
+        <Route path="/orders" element={<div>Orders Page</div>} />
+        <Route path="/salestracking" element={<div>Sales Page</div>} />
+        <Route path="/settings" element={<div>Settings Page</div>} />
+      </Routes>
+    </>,
+    { route: '/' }
+  );
+
+  fireEvent.click(screen.getByText(/dashboard/i)); 
+  expect(screen.getByText(/dashboard page/i)).toBeInTheDocument();
+
+  fireEvent.click(screen.getByText(/users/i));
+  expect(screen.getByText(/users page/i)).toBeInTheDocument();
+
+  fireEvent.click(screen.getByText(/orders/i));
+  expect(screen.getByText(/orders page/i)).toBeInTheDocument();
+
+  fireEvent.click(screen.getByText(/sales/i));
+  expect(screen.getByText(/sales page/i)).toBeInTheDocument();
+
+  fireEvent.click(screen.getByText(/settings/i));
+  expect(screen.getByText(/settings page/i)).toBeInTheDocument();
+});
+
+
+
 
 
   test('renders hamburger menu initially', () => {
