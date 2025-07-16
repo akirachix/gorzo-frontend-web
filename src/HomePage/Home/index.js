@@ -4,17 +4,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser, faUsers, faArrowTrendUp, faCartShopping, faCircleCheck, faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import GroupChart from "../GroupChart";
 import SalesChart from "../SalesChart";
+import SearchBar from "../SearchBar";
+import VendorPerformance from "../vendorPerformance";
+
 
 
 
 
 
 function Home() {
+    const handleSearch = (query) =>{
+      console.log("Search query",query)
+    }
+
+
   return (
     <div className="adminDashboard">
       {/* <Sidebar /> */}
+                   <h2 id="adminTitle">Admin Dashboard</h2>
+                <SearchBar onSearch={handleSearch} id="findItems"/>
+                <div className="userDataContainer">
+
 
       <div className="userData">
+        
 
         <div className="activeUsers">
           <h3 id="userName">Total Vendors</h3>
@@ -64,6 +77,8 @@ function Home() {
           </div>
         </div>
       </div>
+                      </div>
+
 
       <div className="ordersOverview">
         <div className="ordersContainer">
@@ -86,7 +101,9 @@ function Home() {
 
 
         </div>
-        <div className="productPerformance"></div>
+        <div className="vendorPerformance">
+          <VendorPerformance/>
+        </div>
 
       </div>
 

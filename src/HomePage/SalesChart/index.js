@@ -14,13 +14,17 @@ const dataset = [
 
 
 function SalesChart (){
-      <LineChart
+  return(
+     <LineChart
             dataset={dataset}
             xAxis={[{ dataKey: 'month', scaleType: 'band' }]} 
             series={[{ dataKey: 'sales', label: 'Monthly Sales', color: '#F57C00' }]}
             height={300}
             grid={{ vertical: true, horizontal: true }}
                                                    />
+
+  )
+     
 
 
 };
