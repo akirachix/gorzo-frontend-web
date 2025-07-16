@@ -1,6 +1,5 @@
 import React from "react";
 import './index.css';
-// import Sidebar from "../../SharedComponent/SideBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser, faUsers, faArrowTrendUp, faCartShopping, faCircleCheck, faBasketShopping } from '@fortawesome/free-solid-svg-icons';
 import GroupChart from "../GroupChart";

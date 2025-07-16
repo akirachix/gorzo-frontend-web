@@ -1,4 +1,5 @@
 import './App.css';
+import { Outlet } from 'react-router-dom';
 
    import SplashScreen from './OnBoarding/SplashScreen';
    import Welcome from './OnBoarding/WelcomeScreen';
@@ -8,8 +9,9 @@ import './App.css';
    import GetStarted from './OnBoarding/GetStarted';
    import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
    import '@fontsource/manrope';
+   import Home from './HomePage/Home';
+   import Sidebar from './SharedComponent/SideBar';
 
-   const Home = () => <div></div>;
    const Orders = () => <div></div>;
    const Users = () => <div></div>;
    const Sales = () => <div></div>;
@@ -20,7 +22,7 @@ import './App.css';
        <div style={{ display: 'flex' }}>
          <Sidebar />
          <div style={{ flex: 1 }}>
-           {children}
+                  <Outlet />
          </div>
        </div>
      );
