@@ -1,0 +1,103 @@
+.orders_container {
+   padding-bottom: 3%;
+   border: #F57C00 15px solid;
+   border-bottom: none;
+}
+.top-section {
+   display: flex;
+   gap: 18%;
+   margin-top: 3%;
+   width: 60%;
+   /* border: 1px solid purple; */
+  margin: auto;
+  margin-bottom: 5%;
+}
+.pie_info{
+/* border: 1px solid; */
+display: flex;
+}
+.live-groups ul {
+   list-style: none;
+   padding: 0%;
+}
+.live-groups li {
+   /* border: 1px solid; */
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 8px;
+}
+.live-groups {
+   /* border: 1px solid; */
+   width: 50%;
+   margin-top: 3em;
+   h3{
+       color: #F57C00;
+   }
+}
+.chart-box{
+margin-top: 1.9em;
+}
+.legend {
+   /* border: 1px solid green; */
+   margin-top: 17%;
+   line-height: 2em;
+}
+.legend_item {
+   display: flex;
+   width: 10em;
+   align-items: center;
+   gap: 10px;
+   /* border: 1px solid black; */
+}
+.legend_dot {
+   width: 12px;
+   height: 12px;
+   border-radius: 50%;
+   flex-shrink: 0;
+}
+
+
+.table_data {
+  
+   /* border: 1px solid; */
+  width: 30em;
+   display: flex;
+   gap: 6em;
+   p {
+       padding-left: 2em;
+   }
+   h3 {
+       color: #F57C00;
+       /* border: 1px solid; */
+   }
+}
+
+
+.type {
+   padding-left: 2.2em;
+}
+.second_part{
+   /* border: 1px solid black; */
+   width: 40%;
+   margin: auto;
+ 
+}
+
+
+
+
+
+
+@media only screen  and (max-width:820px) {
+
+
+
+
+}
+@media only screen and (max-width:1120px) {
+ 
+}
+@media screen and (max-width:768px){
+
+
+}
