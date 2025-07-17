@@ -25,6 +25,7 @@
 .pie_info{
 /* border: 1px solid; */
 display: flex;
+margin-top: 2%;
 }
 .live-groups ul {
    list-style: none;
