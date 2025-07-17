@@ -1,18 +1,9 @@
 
 import React from 'react';
 import './App.css';
+import { Outlet } from 'react-router-dom';
 import Orders from './orders/index'
-
-function App() {
-  return (
-    <div className="App">
-     <Orders/>
-    </div>
-  );
-}
-
-import './App.css';
-   import SplashScreen from './OnBoarding/SplashScreen';
+  import SplashScreen from './OnBoarding/SplashScreen';
    import Welcome from './OnBoarding/WelcomeScreen';
    import OrderManagement from './OnBoarding/OrderManagement';
    import InventoryManagement from './OnBoarding/InventoryManagement';
@@ -22,23 +13,36 @@ import './App.css';
    import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
    import '@fontsource/manrope';
 
+
+
+ 
+
    const Home = () => <div></div>;
-   const Orders = () => <div></div>;
+  //  const Orders = () => <div></div>;
    const Users = () => <div></div>;
    const Sales = () => <div></div>;
    const Settings = () => <div></div>;
 
 
-   const MainLayout = ({ children }) => {
+   const MainLayout = () => {
      return (
        <div style={{ display: 'flex' }}>
          <Sidebar />
          <div style={{ flex: 1 }}>
-           {children}
+           <Outlet/>
          </div>
        </div>
      );
    };
+
+//    function App() {
+//   return (
+//     <div className="App">
+//      <Orders/>
+//     </div>
+//   );
+// }
+
 
    function App() {
      return (
