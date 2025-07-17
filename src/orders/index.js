@@ -67,12 +67,14 @@ const pieData = [
                        <h3>Order ID</h3>
                        <h3>Price</h3>
                        <h3 className='type'>Type</h3>
+                       <h3 className='date'>Date</h3>
                 </div>
                        {(orders || []).map(data => (
                            <div key={data.order_id} className='table_data'>
                                <p>{data.order_id}</p>
                                <p>{data.total_amount}</p>
                                <p>{data.order_type}</p>
+                               <p>{data.created_at.split('T')[0] } </p>
                            </div>
                        ))
                        }

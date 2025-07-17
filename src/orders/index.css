@@ -7,10 +7,20 @@
    display: flex;
    gap: 18%;
    margin-top: 3%;
-   width: 60%;
+   width: 65%;
    /* border: 1px solid purple; */
   margin: auto;
+  margin-left: 20em;
   margin-bottom: 5%;
+}
+.live-groups {
+   /* border: 1px solid; */
+   width: 50%;
+   margin-top: 3em;
+   margin-left: 5em;
+   h3{
+       color: #F57C00;
+   }
 }
 .pie_info{
 /* border: 1px solid; */
@@ -26,14 +36,7 @@ display: flex;
    justify-content: space-between;
    margin-bottom: 8px;
 }
-.live-groups {
-   /* border: 1px solid; */
-   width: 50%;
-   margin-top: 3em;
-   h3{
-       color: #F57C00;
-   }
-}
+
 .chart-box{
 margin-top: 1.9em;
 }
@@ -60,9 +63,10 @@ margin-top: 1.9em;
 .table_data {
   
    /* border: 1px solid; */
-  width: 30em;
+  width: 42em;
    display: flex;
-   gap: 6em;
+   justify-content: space-between;
+   /* gap: 6em; */
    p {
        padding-left: 2em;
    }
@@ -75,6 +79,10 @@ margin-top: 1.9em;
 
 .type {
    padding-left: 2.2em;
+}
+.date{
+   /* border: 1px solid; */
+   padding-left: 11%;
 }
 .second_part{
    /* border: 1px solid black; */
