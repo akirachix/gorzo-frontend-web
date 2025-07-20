@@ -1,0 +1,61 @@
+.dashboard-container {
+  padding: 2rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.summary-cards {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: #F58220;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card span {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table thead {
+  background-color: #f4f4f4;
+}
+
+.users-table th,
+.users-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.users-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.loading,
+.error {
+  font-size: 1.2rem;
+  color: #F58220;
+  text-align: center;
+  margin-top: 2rem;
+}
+
