@@ -1,6 +1,7 @@
 
 import './App.css';
-import UserDashboard from './FetchUsers';
+// import UserDashboard from './FetchUsers';
+import Sidebar from './SharedComponent/SideBar';
 // import TopCardsFetch from './userFetch';
 // import SplashScreen from './OnBoarding/SplashScreen';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -9,8 +10,7 @@ import UserDashboard from './FetchUsers';
 function App() {
   return(
 <div>
-  
-<UserDashboard/>
+  <Sidebar />
 </div>
 
 
