@@ -1,5 +1,10 @@
 
-const baseUrl= process.env.REACT_APP_API_URL
+const habaURL = process.env.REACT_APP_API_URL;
+
+
+
+
+
 const setToken = (token) => {
   localStorage.setItem('authToken', token);
 };
@@ -55,25 +60,34 @@ async function fetchJson(url, options = {}) {
     throw error;
   }
 }
-console.log('Login request URL:', `${baseUrl}login/`);
-export const login = async (phone, pin) => {
-  const url = `${baseUrl}login/`; 
 
+
+export const fetchVendors = async () => {
   try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ phone_number: phone, pin }),
-    });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`Login failed (${response.status}): ${errorText}`);
-    }
-
-    return await response.json();
+    const data = await fetchJson(`${habaURL}users/`);
+    return data.filter(user => user.role === 'vendor');
   } catch (error) {
-    console.error('Login error:', error);
-    throw error;
+    console.error("Failed to fetch vendors:", error.message);
+    return [];
+  }
+};
+
+export const fetchCustomers = async () => {
+  try {
+    const data = await fetchJson(`${habaURL}users/`);
+    return data.filter(user => user.role === 'customer');
+  } catch (error) {
+    console.error("Failed to fetch customers:", error.message);
+    return [];
+  }
+};
+
+export const fetchLiveGroups = async () => {
+  try {
+    const data = await fetchJson(`${habaURL}LiveGroup/`);
+    return data;
+  } catch (error) {
+    console.error("Failed to fetch live groups:", error.message);
+    return [];
   }
 };

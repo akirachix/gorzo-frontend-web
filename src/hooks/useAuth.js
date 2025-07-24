@@ -56,7 +56,7 @@ export function useSignIn() {
       const data = await login(phone, pin);
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
-      navigate('/admin-dashboard');
+      navigate('/home');
       return true;
     } catch (e) {
       setError('Login failed, try again');

@@ -1,5 +1,4 @@
  body{
-    overflow: hidden;
     font-family: 'Manrope';
 }
 
@@ -114,7 +113,7 @@
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 1600px) {
   .sidebar {
     transform: translateX(-100%);
   }
@@ -212,6 +211,16 @@
 }
 
 
+@media  only screen and (min-width: 1280px){
+    #habaLogo{
+  width: 10vw;
+  padding-top: 50px ;
+  padding-left: 30px;
+}
+
+}
+
+
 @media  only screen and (min-width: 769px) and (max-width:1000px){
     #habaLogo{
   width: 22vw;
@@ -220,4 +229,5 @@
 }
 
 }
+
 
