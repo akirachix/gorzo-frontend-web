@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faUsers, faMoneyBillTrendUp, faList, faGear, faHome } from '@fortawesome/free-solid-svg-icons';
+import {  faUsers, faList, faGear, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './index.css';
 
@@ -29,7 +29,7 @@ const Sidebar = () => {
 
 
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <img src='Images/logohaba.png' id='habaLogo' alt='Haba Logo'/>
+        <img src='/Images/logohaba.png' id='habaLogo' alt='Haba Logo'/>
         <ul className="navigation">
           <li>
             <NavLink to="/home" className="nav-link" onClick={closeSidebar}>
@@ -48,12 +48,6 @@ const Sidebar = () => {
             <NavLink to="/users" className="nav-link" onClick={closeSidebar}>
               <span className="nav-icon"><FontAwesomeIcon icon={faUsers} /></span>
               <span className="nav-label">Users</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/salestracking" className="nav-link" onClick={closeSidebar}>
-              <span className="nav-icon"><FontAwesomeIcon icon={faMoneyBillTrendUp} /></span>
-              <span className="nav-label">Sales</span>
             </NavLink>
           </li>
           <li>
