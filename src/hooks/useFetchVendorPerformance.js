@@ -1,46 +1,30 @@
-import React, { useEffect, useState } from 'react';
-const habaUrl = "https://haba-58a6f125bb51.herokuapp.com/api/";
+import { useState, useEffect } from 'react';
+import { fetchUsers,fetchProducts } from '../utils/fetchVendorPerformance';
 
 
-function DataTable() {
-  const [data, setData] = useState([]); 
+export default function useFetchVendorPerformance() {
+  const [vendors, setVendors] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`${habaUrl}/users`)
-      .then(response => response.json())
-      .then(json => {
-        setData(json); 
-        setLoading(false);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      });
-  }, []); 
+    async function fetchData() {
+      try {
+        setLoading(true);
+        const [users, prods] = await Promise.all([fetchUsers(), fetchProducts()]);
 
-  if (loading) return <div>Loading...</div>;
+        setVendors(users.filter(u => u.role === 'vendor'));
+        setProducts(prods);
+        setLoading(false);
+      } catch (err) {
+        setError(err);
+        setLoading(false);
+      }
+    }
 
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          {/* Add other headers as needed */}
-        </tr>
-      </thead>
-      <tbody>
-        {data.map(item => (
-          <tr key={item.id}> {/* Use a unique key */}
-            <td>{item.id}</td>
-            <td>{item.name}</td>
-            {/* Render other fields as needed */}
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
+    fetchData();
+  }, []);
+
+  return { vendors, products, loading, error };
 }
-
-export default DataTable;

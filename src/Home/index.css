@@ -2,23 +2,12 @@ body{
     overflow-x: hidden;
     font-family: 'Manrope';
 }
-.activeUsers{
-    /* background-color: #FCD8B3; */
-    border: solid 2px #F57C00;
-    width: 15vw;
-    margin-left: 5%;
-    border-radius: 1%;
-    padding: 1%;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    cursor: pointer;
-    
 
-}
 
 #adminTitle{
     color: #F57C00;
     font-size: 2em;
+    margin-left: 10vw;
 }
 .activeUsers:hover{
     box-shadow: 0 2px 4px rgba(243, 132, 5, 0.2);
@@ -41,7 +30,6 @@ body{
     color: #F57C00;
     font-size: 1.5em;
     margin-top: 2%;
-    /* text-align: center; */
 
 }
 
@@ -52,16 +40,8 @@ body{
 
 }
 
-.userData{
-    display: flex;
-    padding-top: 3%;
-   
-
-}
-
 
 .userDataContainer{
-     background-color: #f3e5d6;
       border-radius: 0.6em;
       margin-top: 4%;
       margin-left: 23%;
@@ -78,14 +58,13 @@ body{
 
 .ordersOverview{
     margin-top: 3%;
-    width: 80vw;
+    width: 68vw;
     margin-left: 23%;
     display: flex;
-    gap: 10%;
+    gap: 9%;
 }
 
 .ordersContainer{
-     /* border: solid 1px black; */
     width: 30vw;
 
 }
@@ -93,16 +72,11 @@ body{
     color: #F57C00;
     text-align: center;
 }
-.pieContainer{
-   
-    display: flex;
-    gap: 2%;
-    padding: 3%;
 
-    
 
+#groupPerformance{
+    width: 30vw;
 }
-
 .groupBuys{
     display: flex;
     gap: 5%;
@@ -122,9 +96,9 @@ body{
     height: 5%;
     border-radius: 50%;
 }
-.createdGroups{
+/* .createdGroups{
     background-color: rgb(19, 19, 112);
-}
+} */
 .completedGroups{
     background-color: #F57C00;
 }
@@ -133,9 +107,6 @@ body{
     margin-top: 15%;
 }
 
-/* .circle{
-    display: flex;
-} */
 
 @media only screen and (max-width:450px){
     .userDataContainer{
@@ -166,7 +137,6 @@ width: 40vw;
 }
 
 .activeUsers{
-    /* background-color: #FCD8B3; */
     border: solid 2px #F57C00;
     width: 80vw;
     margin-left: 5%;
@@ -181,14 +151,12 @@ width: 40vw;
 #userIcon{
         color: #F57C00;
         font-size: 3em;
-        /* padding-bottom:2em; */
 
 
 }
 #userName{
    
     text-align: center;
-    /* text-align: center; */
 
 }
 
@@ -200,7 +168,6 @@ width: 40vw;
 }
 
 .ordersContainer{
-     /* border: solid 1px black; */
     width: 80vw;
 
 }
@@ -210,3 +177,81 @@ width: 40vw;
 
     
 }
+
+@media only screen and (width:1024px){
+
+    .usersData{
+     background-color: white;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     width: 70vw;
+    padding: 3%;
+     margin-left: 8em;
+     gap: 50px;  
+
+}
+
+.homeDashboard{
+    margin-left: -16em;
+}
+
+
+
+  .vendor-table {
+    width: 100%; 
+    font-size: 14px; 
+  }
+
+  .vendor-table th,
+  .vendor-table td {
+    padding: 8px 10px; 
+  }
+
+  .vendor-performance {
+    margin-left: 5vw; 
+  }
+
+  .pagination-controls {
+    margin-left: 0; 
+  }
+
+
+
+}
+
+
+@media only screen and (width:1280px){
+
+    .usersData{
+     background-color: white;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     width: 70vw;
+    padding: 3%;
+     margin-left: 10em;
+     display: flex; 
+     gap: 50px;  
+
+
+
+}
+
+.homeDashboard{
+    margin-left: -16em;
+}
+
+
+
+
+  .ordersOverview{
+    margin-top: 3%;
+    width: 68vw;
+    margin-left: 16%;
+    display: flex;
+    gap: 9%;
+}
+
+
+
+
+
+}
+

@@ -9,7 +9,7 @@ import { Outlet } from 'react-router-dom';
    import GetStarted from './OnBoarding/GetStarted';
    import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
    import '@fontsource/manrope';
-   import Home from './HomePage/Home';
+  import Home from './Home';
    import Sidebar from './SharedComponent/SideBar';
 
    const Orders = () => <div></div>;
@@ -17,7 +17,7 @@ import { Outlet } from 'react-router-dom';
    const Sales = () => <div></div>;
    const Settings = () => <div></div>;
 
-   const MainLayout = ({ children }) => {
+   const MainLayout = () => {
      return (
        <div style={{ display: 'flex' }}>
          <Sidebar />
@@ -39,6 +39,7 @@ import { Outlet } from 'react-router-dom';
            <Route path="/order" element={<OrderManagement />} />
            <Route path="/getStarted" element={<GetStarted />} />
            <Route path="/sales" element={<SalesTracking />} />
+
            
            <Route element={<MainLayout />}>
              <Route path="/home" element={<Home />} />
