@@ -57,6 +57,7 @@
 .nav-link.active {
     background-color: white;
     color: #F57C00;
+    width: 215px;
 } 
 
 

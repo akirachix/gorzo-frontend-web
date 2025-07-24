@@ -1,24 +1,36 @@
 .topcards-container {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  margin: 0% 1% 2% 1%;
+  text-align: center;
+
+}
+h1{
+  /* color: #f97316;  */
+  color: #0e793e; 
+  font-size: 35px;
+ 
 }
 .topcard {
   background-color: #f97316;
   color: white;
-  padding: 24px;
+  padding: 20px 20px 20px 0px;
   border-radius: 12px;
-  width: 220px;
+  width: 550px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  
 }
 .topcard-title {
-  font-size: 16px;
+  font-size: 25px;
+  margin-left: 5%;
   font-weight: 500;
-  margin-bottom: 12px;
 }
 .topcard-number {
-  font-size: 28px;
+  font-size: 67px;
   font-weight: bold;
+  border: #e9e3e0 solid 1px;
+  padding: 0% 3% 0% 3%;
+  border-radius: 50%;
 }
 
 
@@ -35,41 +47,52 @@
   margin-bottom: 16px;
 }
 .users-table {
-  margin-top: 1%;
-  width: 100%;
+  margin-left: 1%;
+  width: 95%;
   border-collapse: collapse;
   font-size: 14px;
+  
 }
 .users-table thead {
-  background-color: #ffedd5; /* Light orange */
+  background-color: #ffedd5; 
   color: #ea580c;
   text-align: left;
+
 }
 .users-table th,
 .users-table td {
-  padding: 12px 16px;
-  border-bottom: 1px solid #ffe4b5;
+  padding: 18px 0px 9px 0px ;
+  border-block: #e2c799 solid 1px;
+  border-bottom: 1px solid #e2c799;
 }
 .users-table tr:hover {
   background-color: #fff7ed;
 }
-.status-active {
+.active {
   color: green;
+  font-weight: bold;
+}
+
+.inactive {
+  color: red;
   font-weight: bold;
 }
 
 
 
 .search-input {
-  padding: 8px;
+  padding: 12px;
   border: 1px solid  #ebb791; 
-; /* Light gray */
+  margin-left: 1%;
   border-radius: 15px;
   margin-bottom: 10px;
   width: 400px;
 }
-
+.users-table th,.users-table td{
+  padding-left: 1%;
+}
 .search-container {
+
   position: relative;
   display: flex;
   align-items: center;
@@ -77,23 +100,27 @@
 }
  .search-icon {
  position: absolute; 
-  left: 380px; 
-  top: 8px;
+  left: 400px; 
+  top: 13px;
   color: #f97316;
    }
 .pagination-controls {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-top: 10px;
+  margin-top: 1%;
+  bottom: 3.5%;
+  position: absolute;
+  left: 40%;
 
 }
 .pagination-controls button {
   background-color: #f97316; 
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   font-size: 20px;
-  padding: 8px 20px;
+  padding: 8px 10px;
+  width: 150px;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -103,7 +130,7 @@
   color: white;
 }
 .pagination-controls button:disabled {
-  background-color: #f3f4f6; /* Light gray */
+  background-color: #f3f4f6; 
   cursor: not-allowed;
   color: #f8d0b3; 
 }
@@ -113,9 +140,34 @@
 } 
 
 .span{
-  margin-top: 0.5%;
+  margin-top: 3%;
 }
 
 
+
+.dashboard-container{
+  margin-top:3%;
+  margin-left: 13%;
+}
+
+.vendor{
+ color: #0b6e6b;
+}
+
+.customer{
+  color: #3f4c86;  
+}
+.admin{
+  color: #c05314;
+}
+
+.no-results{
+  text-align: center;
+  font-size: 20px;
+  color: #d85d06; 
+  margin-top:18%;
+margin-bottom: 15%;
+
+}
 
 
