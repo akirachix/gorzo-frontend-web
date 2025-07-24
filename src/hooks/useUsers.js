@@ -69,6 +69,6 @@ export const useUsers = (searchQuery = '', page = 1, limit = 10) => {
       }
     };
     fetchUser();
-  }, [searchQuery, limit]);
+  }, [searchQuery, limit, page]);
   return { loading, error, users, totalUsers, totalVendors, totalCustomers };
 };
