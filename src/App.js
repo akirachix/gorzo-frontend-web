@@ -13,7 +13,6 @@ import { Outlet } from 'react-router-dom';
    import Sidebar from './SharedComponent/SideBar';
 
    const Orders = () => <div></div>;
-   const Users = () => <div></div>;
    const Sales = () => <div></div>;
    const Settings = () => <div></div>;
 
@@ -22,6 +21,7 @@ import { Outlet } from 'react-router-dom';
        <div style={{ display: 'flex' }}>
          <Sidebar />
          <div style={{ flex: 1 }}>
+                  <Outlet />
                   <Outlet />
          </div>
        </div>
@@ -52,5 +52,4 @@ import { Outlet } from 'react-router-dom';
        </Router>
      );
    }
-
    export default App;
