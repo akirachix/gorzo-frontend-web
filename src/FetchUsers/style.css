@@ -61,7 +61,7 @@ h1{
 }
 .users-table th,
 .users-table td {
-  padding: 18px 0px 9px 0px ;
+  padding: 15px 0px 9px 0px ;
   border-block: #e2c799 solid 1px;
   border-bottom: 1px solid #e2c799;
 }
@@ -108,10 +108,9 @@ h1{
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-top: 1%;
-  bottom: 3.5%;
+  bottom: 2.5%;
   position: absolute;
-  left: 40%;
+  left: 50%;
 
 }
 .pagination-controls button {
