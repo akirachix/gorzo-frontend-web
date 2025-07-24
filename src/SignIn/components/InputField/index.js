@@ -1,7 +1,7 @@
 import React from "react";
-import './inputField.css'
+import './index.css'
 
-function InputField( {label,placeholder,type="text",value,name}) {
+function InputField( {label,placeholder,type="text",value,name, onChange}) {
     return (
         <div className="input-container">
         <div className="input-group">
@@ -11,7 +11,8 @@ function InputField( {label,placeholder,type="text",value,name}) {
                     type={type}
                     placeholder={placeholder}
                     value={value}
-                    name={name} />
+                    name={name}
+                    onChange={onChange} />
 
         </div>
         </div>
