@@ -1,19 +1,16 @@
 import React from "react";
 import './index.css';
-import GroupChart from "./Components/GroupChart";
-import CustomerProgressionChart from "./Components/UserProgressionChart";
-import VendorPerformance from "./Components/VendorPerformance";
-import DashboardStats from "./Components/DashboardStats";
+import GroupChart from "./components/GroupChart";
+import CustomerProgressionChart from "./components/UserProgressionChart";
+import VendorPerformance from "./components/VendorPerformance";
+import DashboardStats from "./components/DashboardStats";
 
 
 
 
 
 function Home() {
-    const handleSearch = (query) =>{
-      console.log("Search query",query)
-    }
-
+   
 
   return (
     <div className="adminDashboard">

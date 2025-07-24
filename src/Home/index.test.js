@@ -2,10 +2,10 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Home from '.';
 
-jest.mock('./Components/DashboardStats', () => () => <div data-testid="dashboard-stats" />);
-jest.mock('./Components/UserProgressionChart', () => () => <div data-testid="sales-chart" />);
-jest.mock('./Components/GroupChart', () => () => <div data-testid="group-chart" />);
-jest.mock('./Components/VendorPerformance', () => () => <div data-testid="vendor-performance" />);
+jest.mock('./components/DashboardStats', () => () => <div data-testid="dashboard-stats" />);
+jest.mock('./components/UserProgressionChart', () => () => <div data-testid="sales-chart" />);
+jest.mock('./components/GroupChart', () => () => <div data-testid="group-chart" />);
+jest.mock('./components/VendorPerformance', () => () => <div data-testid="vendor-performance" />);
 
 describe('Home Component', () => {
   it('renders the admin dashboard title', () => {
