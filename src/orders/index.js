@@ -1,7 +1,7 @@
 import './index.css'
 import * as React from 'react';
 import { PieChart } from '@mui/x-charts/PieChart';
-import { useFetchOrders } from '../orders/hooks/usefetchorders';
+import { useFetchOrders } from '../hooks/usefetchorders';
 import { useState, useEffect, useMemo } from 'react';
 import { FaSearch } from "react-icons/fa";
 
@@ -11,7 +11,7 @@ const Orders = () => {
 
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3; 
+  const itemsPerPage = 8; 
 
 
   const pieData = [

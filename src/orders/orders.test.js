@@ -1,13 +1,12 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import * as hookModule from '../orders/hooks/usefetchorders';
-import Orders from './index';
-import {useFetchOrders} from '../orders/hooks/usefetchorders';
+import Orders from '.';
+import { useFetchOrders } from '../hooks/usefetchorders';
 import '@testing-library/jest-dom';
 
 
 
-jest.mock('../orders/hooks/usefetchorders', () => ({
+jest.mock('../hooks/usefetchorders', () => ({
  useFetchOrders: jest.fn(),
 }));
 

@@ -1,20 +1,9 @@
-const baseUrl= process.env.REACT_APP_BASE_URL;
-console.log({baseUrl});
-const STATIC_AUTH_TOKEN = 'f94682cd330ff26b480f935b78921c151179f8eb';
-const TOKEN_STORAGE_KEY = 'authToken';
+import { getCachedToken } from './authApi';
+const baseUrl = process.env.REACT_APP_API_URL;
 
-if (!localStorage.getItem(TOKEN_STORAGE_KEY)) {
- localStorage.setItem(TOKEN_STORAGE_KEY, STATIC_AUTH_TOKEN);
-}
-const getToken = () => {
- return localStorage.getItem(TOKEN_STORAGE_KEY);
-};
 
-const clearToken = () => {
-  localStorage.removeItem('authToken');
-};
 async function ensureToken() {
-  const token = getToken();
+  const token = await getCachedToken();
   if (!token) {
     console.warn("No token found. Please log in.");
     throw new Error("Authentication required");
@@ -31,16 +20,13 @@ async function getHeaders() {
 async function fetchJson(url, options = {}) {
   try {
     const headers = await getHeaders();
-     const cacheKey = new URL(url).toString();
-  
-   const  response = await fetch(url, {
+    const cacheKey = new URL(url).toString();
+    const response = await fetch(url, {
       ...options,
       headers,
     });
-  
     const data = await response.json();
-    console.log({newData: data});
-    
+    console.log({ newData: data });
     if ('caches' in window) {
       const cache = await caches.open('api-cache');
       await cache.put(cacheKey, new Response(JSON.stringify(data)));
@@ -51,23 +37,16 @@ async function fetchJson(url, options = {}) {
     throw error;
   }
 }
-
 export const fetchOrders = async () => {
   try {
-    const result = await fetchJson(`${baseUrl}/orders/`);
-
-
+    const result = await fetchJson(`${baseUrl}orders/`);
     if (!Array.isArray(result)) {
-      console.error('fetchUsers error: Result is not an array', result);
+      console.error('fetchOrders error: Result is not an array', result);
       throw new Error('API response is not an array');
     }
-
     return result;
   } catch (error) {
-    console.error('fetchUsers error:', error);
-    throw new Error(error.message ?? 'An error occurred while fetching users');
+    console.error('fetchOrders error:', error);
+    throw new Error(error.message ?? 'An error occurred while fetching orders');
   }
-  
 };
-
-
