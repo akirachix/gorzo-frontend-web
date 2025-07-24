@@ -28,7 +28,7 @@ export function useSignIn() {
     }
 
     if (token && user?.role === 'admin') {
-      navigate('/admin-dashboard');
+      navigate('/home');
     }
   }, [navigate]);
 
