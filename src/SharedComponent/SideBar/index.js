@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faUsers, faMoneyBillTrendUp, faList, faGear, faHome } from '@fortawesome/free-solid-svg-icons';
+import {  faUsers, faList, faGear, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './index.css';
 

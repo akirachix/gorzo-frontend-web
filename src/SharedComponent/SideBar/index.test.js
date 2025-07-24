@@ -42,8 +42,7 @@ test('navigates to correct routes for multiple sidebar links', () => {
   fireEvent.click(screen.getByText(/orders/i));
   expect(screen.getByText(/orders page/i)).toBeInTheDocument();
 
-  fireEvent.click(screen.getByText(/sales/i));
-  expect(screen.getByText(/sales page/i)).toBeInTheDocument();
+  
 
   fireEvent.click(screen.getByText(/settings/i));
   expect(screen.getByText(/settings page/i)).toBeInTheDocument();
