@@ -4,7 +4,7 @@ import StatsCard from '.';
 
 
 describe('StatsCard Component', () => {
-  test('renders the title and value correctly', () => {
+  test('renders the title and value', () => {
     render(<StatsCard title="Users" value="100" icon="user" />);
 
     const titleElement = screen.getByText(/Users/i);
