@@ -1,19 +1,15 @@
 .orders_container {
-   /* padding-bottom: 3%; */
-   /* border: #F57C00 15px solid; */
    border-bottom: none;
 }
 .top-section {
    display: flex;
    gap: 18%;
    width: 75%;
-   /* border: 1px solid purple; */
   margin: auto;
   margin-left: 16em;
   margin-bottom:1%;
 }
 .live-groups {
-   /* border: 1px solid; */
    width: 50%;
    margin-top: 0.5em;
    margin-left: 5em;
@@ -22,7 +18,6 @@
    }
 }
 .pie_info{
-/* border: 1px solid; */
 width: 50em;
 display: flex;
 margin-top: -1em;
@@ -33,13 +28,11 @@ padding-left: 5em;
    padding: 0%;
 }
 .live-groups li {
-   /* border: 1px solid; */
    display: flex;
    justify-content: space-between;
    margin-bottom: 8px;
 }
 .order{
-   /* border: 1px solid black; */
    color: #F57C00;
    width: 20%;
    margin-left: 19.5%;
@@ -69,7 +62,6 @@ margin-top: -1em;
 margin-top: 1.9em;
 }
 .legend {
-   /* border: 1px solid green; */
    margin-top: 12%;
    line-height: 2em;
    h3{
@@ -82,7 +74,6 @@ margin-top: 1.9em;
    width: 10em;
    align-items: center;
    gap: 10px;
-   /* border: 1px solid black; */
 }
 .legend_dot {
    width: 12px;
@@ -95,7 +86,6 @@ margin-top: 1.9em;
 .table_data {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1.5fr 1fr;
-  /* padding: 0.5rem 1rem; */
   align-items: center;
   border-bottom: 1px solid #f3cda7;
   
@@ -106,8 +96,6 @@ margin-top: 1.9em;
    }
    h3 {
        color: #F57C00;
-       /* border: 1px solid; */
-       /* background-color: #f3cda7; */
        width: 117%;
        padding-left: 15%;
    }
@@ -118,7 +106,6 @@ margin-top: 1.9em;
    margin-left: 2%;
 }
 .second_part{
-   /* border: 1px solid black; */
    width: 73%;
    margin-left: 15%;
    padding-left: 5em;
