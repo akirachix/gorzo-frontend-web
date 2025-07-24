@@ -55,9 +55,9 @@ async function fetchJson(url, options = {}) {
     throw error;
   }
 }
-console.log('Login request URL:', `${baseUrl}/login`);
+console.log('Login request URL:', `${baseUrl}login/`);
 export const login = async (phone, pin) => {
-  const url = `${baseUrl}/login/`; 
+  const url = `${baseUrl}login/`; 
 
   try {
     const response = await fetch(url, {

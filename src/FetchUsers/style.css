@@ -3,6 +3,7 @@
   justify-content: space-between;
   margin: 0% 1% 2% 1%;
   text-align: center;
+ 
 
 }
 h1{
@@ -108,9 +109,8 @@ h1{
   display: flex;
   justify-content: center;
   gap: 40px;
-  bottom: 2.5%;
-  position: absolute;
-  left: 50%;
+  margin-top: 1%;
+
 
 }
 .pagination-controls button {
@@ -118,7 +118,7 @@ h1{
   border: none;
   border-radius: 10px;
   font-size: 20px;
-  padding: 8px 10px;
+  height: 45px;
   width: 150px;
   color: white;
   cursor: pointer;
@@ -139,7 +139,7 @@ h1{
 } 
 
 .span{
-  margin-top: 3%;
+  margin-top: 1%;
 }
 
 

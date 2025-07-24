@@ -51,12 +51,6 @@ const Sidebar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/salestracking" className="nav-link" onClick={closeSidebar}>
-              <span className="nav-icon"><FontAwesomeIcon icon={faMoneyBillTrendUp} /></span>
-              <span className="nav-label">Sales</span>
-            </NavLink>
-          </li>
-          <li>
             <NavLink to="/settings" className="nav-link" onClick={closeSidebar}>
               <span className="nav-icon"><FontAwesomeIcon icon={faGear} /></span>
               <span className="nav-label">Settings</span>
