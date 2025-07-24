@@ -1,3 +1,12 @@
+
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SignIn from './SignIn';
+
+
+
+
 import './App.css';
 import { Outlet } from 'react-router-dom';
   import Users from './FetchUsers';
@@ -23,7 +32,8 @@ import { Outlet } from 'react-router-dom';
          <Routes>
          
            <Route element={<MainLayout />}>
-  
+   <Route path="/SignIn" element={<SignIn />} />
+        <Route path="/" element={<SignIn />} />
              <Route path="/orders" element={<Orders />} />
              <Route path="/users" element={<Users />} />
              <Route path="/salestracking" element={<Sales />} />
@@ -34,3 +44,4 @@ import { Outlet } from 'react-router-dom';
      );
    }
    export default App;
+
