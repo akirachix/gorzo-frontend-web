@@ -29,7 +29,7 @@ const Sidebar = () => {
 
 
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <img src='Images/logohaba.png' id='habaLogo' alt='Haba Logo'/>
+        <img src='/Images/logohaba.png' id='habaLogo' alt='Haba Logo'/>
         <ul className="navigation">
           <li>
             <NavLink to="/home" className="nav-link" onClick={closeSidebar}>
