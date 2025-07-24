@@ -10,6 +10,7 @@ import Orders from './orders/index'
    import SalesTracking from './OnBoarding/SalesTracking';
    import GetStarted from './OnBoarding/GetStarted';
    import Sidebar from './SharedComponent/SideBar';
+   
    import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
    import '@fontsource/manrope';
 
@@ -18,7 +19,6 @@ import Orders from './orders/index'
  
 
    const Home = () => <div></div>;
-  //  const Orders = () => <div></div>;
    const Users = () => <div></div>;
    const Sales = () => <div></div>;
    const Settings = () => <div></div>;
@@ -35,16 +35,10 @@ import Orders from './orders/index'
      );
    };
 
-//    function App() {
-//   return (
-//     <div className="App">
-//      <Orders/>
-//     </div>
-//   );
-// }
 
 
    function App() {
+    
      return (
        <Router>
          <Routes>
@@ -61,6 +55,8 @@ import Orders from './orders/index'
              <Route path="/users" element={<Users />} />
              <Route path="/salestracking" element={<Sales />} />
              <Route path="/settings" element={<Settings />} />
+            
+             
            </Route>
          </Routes>
        </Router>

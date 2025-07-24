@@ -1,21 +1,25 @@
 import { useEffect , useState} from "react";
-import {fetchOrders} from '../fetchorders'
+import {fetchOrders} from '../utils/fetchorders'
 
 
 export const useFetchOrders = ()=>{
    const [orders , setorders]= useState([]);
    const [loading , setLoading] = useState(false)
    const [error , setError] = useState(null)
-   const baseUrl =process.env.REACT_APP_BASE_URL;
-   console.log(baseUrl);
+
 
 
 const fetchorders = async ()=>{
    try{
        setLoading(true)
        const response = await fetchOrders()
-       console.log('API response:', response);
-       setorders(Array.isArray(response)? response:(response.results || []))
+  
+
+       const data = response
+       console.log({data});
+       
+       
+       setorders(data)
    }
    catch (error){
        setError(error.message ?? 'An error Occured')
@@ -25,11 +29,7 @@ const fetchorders = async ()=>{
    }
 }
 useEffect(()=>{
-   // (async ()=>{
-       // await fetchorders()
        fetchorders()
    },[])
-   // ();
-// })
 return {loading, error , orders}
 }

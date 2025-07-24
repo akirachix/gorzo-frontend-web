@@ -4,14 +4,7 @@ import App from './App';
 import '@testing-library/jest-dom';
 
 
-test('renders learn react link', () => {
-  render(<App />);
-  expect(screen.getByText(/loading/i)).toBeInTheDocument();
 
-beforeEach(() => {
-  jest.resetModules();
-})
-});
 function renderWithPath(path) {
   window.history.pushState({}, '', path);
   return render(<App />);

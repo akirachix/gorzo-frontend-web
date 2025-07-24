@@ -40,8 +40,6 @@ describe('Orders Component', () => {
    ];
    useFetchOrders.mockReturnValue({ loading: false, error: null, orders: mockOrders });
    render(<Orders />);
-
-
    expect(screen.getByText(/individual orders/i)).toBeInTheDocument();
    expect(screen.getByText(/group orders/i)).toBeInTheDocument();
  });
