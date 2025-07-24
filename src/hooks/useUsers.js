@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchUsers } from '../utils/usersfetch';
+import { fetchUsers } from '../utils/fetchVendorPerformance';
 
 export const useUsers = (searchQuery = '', page = 1, limit = 10) => {
   const [users, setUsers] = useState([]);

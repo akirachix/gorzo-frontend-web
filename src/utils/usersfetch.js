@@ -1,13 +1,7 @@
 const habaURL= process.env.REACT_APP_API_URL;
 
-const setToken = (token) => {
-  localStorage.setItem('authToken', token);
-};
 const getToken = () => {
   return localStorage.getItem('authToken');
-};
-const clearToken = () => {
-  localStorage.removeItem('authToken');
 };
 
 async function ensureToken() {

@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleUser, faUsers, faArrowTrendUp, faCartShopping, faCircleCheck, faBasketShopping } from '@fortawesome/free-solid-svg-icons';
+import { faCircleUser, faUsers, faCartShopping, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import StatsCard from "../StatsCard";
 import useStatsData from "../../../hooks/useFetchStatsCard";
 import './index.css';
