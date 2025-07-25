@@ -1,0 +1,257 @@
+body{
+    overflow-x: hidden;
+    font-family: 'Manrope';
+}
+
+
+#adminTitle{
+    color: #F57C00;
+    font-size: 2em;
+    margin-left: 10vw;
+}
+.activeUsers:hover{
+    box-shadow: 0 2px 4px rgba(243, 132, 5, 0.2);
+    transform: translateY(-15px);
+
+
+}
+
+#adminTitle{
+    text-align: center;
+    padding: 1%;
+}
+
+.vendorTitles{
+    display: flex;
+   gap: 0%;
+   justify-content: space-between;
+}
+#userName{
+    color: #F57C00;
+    font-size: 1.5em;
+    margin-top: 2%;
+
+}
+
+#userIcon{
+        color: #F57C00;
+        font-size: 3em;
+
+
+}
+
+
+.userDataContainer{
+      border-radius: 0.6em;
+      margin-top: 4%;
+      margin-left: 23%;
+      padding: 2%;
+      width: 60vw;
+
+
+}
+
+.userData:hover .activeUsers{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ordersOverview{
+    margin-top: 3%;
+    width: 68vw;
+    margin-left: 23%;
+    display: flex;
+    gap: 9%;
+}
+
+.ordersContainer{
+    width: 30vw;
+
+}
+#ordersHeading{
+    color: #F57C00;
+    text-align: center;
+}
+
+
+#groupPerformance{
+    width: 30vw;
+}
+.groupBuys{
+    display: flex;
+    gap: 5%;
+    width: 30vw;
+}
+
+.groupBuysDetails{
+    margin-top: 23%;
+        width: 10vw;
+
+}
+
+.createdGroups,.completedGroups{
+    border: 1px solid grey;
+    color: #EDDFDF;
+    width: 5%;
+    height: 5%;
+    border-radius: 50%;
+}
+/* .createdGroups{
+    background-color: rgb(19, 19, 112);
+} */
+.completedGroups{
+    background-color: #F57C00;
+}
+
+.pieChartDetails{
+    margin-top: 15%;
+}
+
+
+@media only screen and (max-width:450px){
+    .userDataContainer{
+     background-color: #f3e5d6;
+      border-radius: 0.6em;
+      margin-top: 4%;
+      margin-left: 0%;
+      padding: 2%;
+      width: 100vw;
+
+
+}
+
+
+.userData{
+flex-direction: column;   
+width: 40vw;
+
+}
+
+.vendorTitles{
+   flex-direction: column;   
+
+   p{
+    font-size: 2em;
+   }
+
+}
+
+.activeUsers{
+    border: solid 2px #F57C00;
+    width: 80vw;
+    margin-left: 5%;
+    border-radius: 1%;
+    padding: 1%;
+    margin-top: 10%;
+    
+    
+
+}
+
+#userIcon{
+        color: #F57C00;
+        font-size: 3em;
+
+
+}
+#userName{
+   
+    text-align: center;
+
+}
+
+.ordersOverview{
+   
+    flex-direction: column;
+        margin-left: 0%;
+
+}
+
+.ordersContainer{
+    width: 80vw;
+
+}
+
+
+
+
+    
+}
+
+@media only screen and (width:1024px){
+
+    .usersData{
+     background-color: white;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     width: 70vw;
+    padding: 3%;
+     margin-left: 8em;
+     gap: 50px;  
+
+}
+
+.homeDashboard{
+    margin-left: -16em;
+}
+
+
+
+  .vendor-table {
+    width: 100%; 
+    font-size: 14px; 
+  }
+
+  .vendor-table th,
+  .vendor-table td {
+    padding: 8px 10px; 
+  }
+
+  .vendor-performance {
+    margin-left: 5vw; 
+  }
+
+  .pagination-controls {
+    margin-left: 0; 
+  }
+
+
+
+}
+
+
+@media only screen and (width:1280px){
+
+    .usersData{
+     background-color: white;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     width: 70vw;
+    padding: 3%;
+     margin-left: 10em;
+     display: flex; 
+     gap: 50px;  
+
+
+
+}
+
+.homeDashboard{
+    margin-left: -16em;
+}
+
+
+
+
+  .ordersOverview{
+    margin-top: 3%;
+    width: 68vw;
+    margin-left: 16%;
+    display: flex;
+    gap: 9%;
+}
+
+
+
+
+
+}
+

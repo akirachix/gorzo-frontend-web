@@ -1,0 +1,78 @@
+{
+  "name": "gorzo-frontend-web",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+   
+    "react-icon": "^1.0.0",
+   
+    "web-vitals": "^5.0.3",
+
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@fontsource/manrope": "^5.2.6",
+   
+  
+  
+   
+    "@mui/icons-material": "^7.2.0",
+    "@mui/x-charts": "^8.7.0",
+    "axios": "^1.10.0",
+    "chart.js": "^4.5.0",
+    "cors": "^2.8.5",
+    "cra-template-pwa": "2.0.0",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.3.0",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
+    "recharts": "^3.1.0"
+
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+
+    "jest": "^27.5.1",
+    "react-router-dom": "^6.30.1",
+
+    "@testing-library/user-event": "^14.6.1",
+    
+    "jest-fetch-mock": "^3.0.3",
+    "msw": "^2.10.4",
+    "react-test-renderer": "^18.3.1",
+    "web-vitals": "^5.0.3"
+
+  }
+}
