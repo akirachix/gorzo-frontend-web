@@ -11,9 +11,17 @@ const renderWithRouter = (ui) => {
   return render(<BrowserRouter>{ui}</BrowserRouter>);
 };
 describe('Sidebar', () => {
-  beforeEach(() => {
-    signOut.mockClear();
+ beforeEach(() => {
+  delete window.location;
+  Object.defineProperty(window, 'location', {
+    writable: true,
+    value: {
+      href: 'http://localhost/',
+      origin: 'http://localhost',
+    
+    },
   });
+});
   test('renders hamburger button initially and toggles sidebar when clicked', () => {
     renderWithRouter(<Sidebar />);
   
