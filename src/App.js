@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import '@fontsource/manrope';
@@ -8,9 +9,9 @@ import SignIn from './SignIn';
 import Home from './Home';
 import Sidebar from './SharedComponent/SideBar';
 import Users from './FetchUsers';
+import Orders from './orders';
 
 
-const Orders = () => <div></div>;
 const Settings = () => <div></div>;
 
 const MainLayout = () => {

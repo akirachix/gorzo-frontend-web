@@ -1,17 +1,11 @@
-
+import { getCachedToken } from './authApi';
 const habaURL = process.env.REACT_APP_API_URL;
-
-
-
-
-
-
-const getToken = () => {
-  return localStorage.getItem('authToken');
-};
-
+function handleFetchError(error, fallback = []) {
+  console.error('Fetch error:', error.message);
+  return fallback;
+}
 async function ensureToken() {
-  const token = getToken();
+  const token = await getCachedToken();
   if (!token) {
     console.warn("No token found. Please log in.");
     throw new Error("Authentication required");
@@ -28,7 +22,6 @@ async function getHeaders() {
 async function fetchJson(url, options = {}) {
   try {
     const headers = await getHeaders();
-    let response;
     if ('caches' in window) {
       const cache = await caches.open('api-cache');
       const cachedResponse = await cache.match(url);
@@ -37,7 +30,7 @@ async function fetchJson(url, options = {}) {
         return await cachedResponse.json();
       }
     }
-    response = await fetch(url, {
+    const response = await fetch(url, {
       ...options,
       headers,
     });
@@ -56,34 +49,35 @@ async function fetchJson(url, options = {}) {
     throw error;
   }
 }
-
-
 export const fetchVendors = async () => {
   try {
     const data = await fetchJson(`${habaURL}users/`);
     return data.filter(user => user.role === 'vendor');
   } catch (error) {
-    console.error("Failed to fetch vendors:", error.message);
-    return [];
+    return handleFetchError(error);
   }
 };
-
 export const fetchCustomers = async () => {
   try {
     const data = await fetchJson(`${habaURL}users/`);
     return data.filter(user => user.role === 'customer');
   } catch (error) {
-    console.error("Failed to fetch customers:", error.message);
-    return [];
+    return handleFetchError(error);
+  }
+};
+export const fetchLiveGroups = async () => {
+  try {
+    return await fetchJson(`${habaURL}LiveGroup/`);
+  } catch (error) {
+    return handleFetchError(error);
   }
 };
 
-export const fetchLiveGroups = async () => {
-  try {
-    const data = await fetchJson(`${habaURL}LiveGroup/`);
-    return data;
-  } catch (error) {
-    console.error("Failed to fetch live groups:", error.message);
-    return [];
-  }
-};
+
+
+
+
+
+
+
+

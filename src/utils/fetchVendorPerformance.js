@@ -1,12 +1,7 @@
-
+import { getCachedToken } from './authApi';
 const habaURL = process.env.REACT_APP_API_URL;
-
-const getToken = () => {
-  return localStorage.getItem('authToken');
-};
-
 async function ensureToken() {
-  const token = getToken();
+  const token = await getCachedToken();
   if (!token) {
     console.warn("No token found. Please log in.");
     throw new Error("Authentication required");
@@ -23,7 +18,6 @@ async function getHeaders() {
 async function fetchJson(url, options = {}) {
   try {
     const headers = await getHeaders();
-    let response;
     if ('caches' in window) {
       const cache = await caches.open('api-cache');
       const cachedResponse = await cache.match(url);
@@ -32,7 +26,7 @@ async function fetchJson(url, options = {}) {
         return await cachedResponse.json();
       }
     }
-    response = await fetch(url, {
+    const response = await fetch(url, {
       ...options,
       headers,
     });
@@ -51,25 +45,19 @@ async function fetchJson(url, options = {}) {
     throw error;
   }
 }
-
-
-
 export const fetchUsers = async () => {
   try {
-    const data = await fetchJson(`${habaURL}users/`);
-    return data;
+    return await fetchJson(`${habaURL}users/`);
   } catch (error) {
     console.error("Failed to fetch users:", error.message);
     return [];
   }
 };
-
 export const fetchProducts = async () => {
   try {
-    const data = await fetchJson(`${habaURL}products/`);
-    return data;
+    return await fetchJson(`${habaURL}products/`);
   } catch (error) {
-    console.error("Failed products:", error.message);
+    console.error("Failed to fetch products:", error.message);
     return [];
   }
 };
