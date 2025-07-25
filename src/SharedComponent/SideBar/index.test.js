@@ -82,7 +82,7 @@ describe('Sidebar', () => {
     const confirmBtn = screen.getByRole('button', { name: /yes/i });
   
     delete window.location;
-    window.location = { href: '' };
+    window.location = { href: 'http://localhost/' };
     fireEvent.click(confirmBtn);
     expect(signOut).toHaveBeenCalled();
     expect(window.location.href).toBe('/');
