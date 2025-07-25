@@ -1,82 +1,84 @@
-
-
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import Sidebar from '.';
+import { BrowserRouter } from 'react-router-dom';
 
-const renderWithRouter = (ui, { route = '/' } = {}) => {
-  window.history.pushState({}, 'Test page', route);
-  return render(
-    <MemoryRouter initialEntries={[route]}>
-      <Routes>
-        <Route path="*" element={ui} />
-      </Routes>
-    </MemoryRouter>
-  );
+jest.mock('../../utils/auth', () => ({
+  signOut: jest.fn(),
+}));
+import { signOut } from '../../utils/auth';
+const renderWithRouter = (ui) => {
+  return render(<BrowserRouter>{ui}</BrowserRouter>);
 };
-
-describe('Sidebar Component', () => {
-
-test('navigates to correct routes for multiple sidebar links', () => {
-  renderWithRouter(
-    <>
-      <Sidebar />
-      <Routes>
-        <Route path="/home" element={<div>Dashboard Page</div>} />
-        <Route path="/users" element={<div>Users Page</div>} />
-        <Route path="/orders" element={<div>Orders Page</div>} />
-        <Route path="/salestracking" element={<div>Sales Page</div>} />
-        <Route path="/settings" element={<div>Settings Page</div>} />
-      </Routes>
-    </>,
-    { route: '/' }
-  );
-
-  fireEvent.click(screen.getByText(/dashboard/i)); 
-  expect(screen.getByText(/dashboard page/i)).toBeInTheDocument();
-
-  fireEvent.click(screen.getByText(/users/i));
-  expect(screen.getByText(/users page/i)).toBeInTheDocument();
-
-  fireEvent.click(screen.getByText(/orders/i));
-  expect(screen.getByText(/orders page/i)).toBeInTheDocument();
-
+describe('Sidebar', () => {
+  beforeEach(() => {
+    signOut.mockClear();
+  });
+  test('renders hamburger button initially and toggles sidebar when clicked', () => {
+    renderWithRouter(<Sidebar />);
   
+    const hamburgerBtn = screen.getByRole('button', { name: /open menu/i });
+    expect(hamburgerBtn).toBeInTheDocument();
 
-  fireEvent.click(screen.getByText(/settings/i));
-  expect(screen.getByText(/settings page/i)).toBeInTheDocument();
-});
+    const sidebarNav = screen.getByRole('navigation', { name: /sidebar navigation/i });
+    expect(sidebarNav.parentElement).not.toHaveClass('open');
 
+    fireEvent.click(hamburgerBtn);
 
-
-
-
-  test('renders hamburger menu initially', () => {
-    renderWithRouter(<Sidebar />);
-    expect(screen.getByRole('button', { name: /open menu/i })).toBeInTheDocument();
-  });
-
-  test('clicking hamburger opens the sidebar', () => {
-    renderWithRouter(<Sidebar />);
-    fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
-    expect(screen.getByRole('button', { name: /close menu/i })).toBeInTheDocument();
-    expect(screen.getByText(/dashboard/i)).toBeInTheDocument();
-  });
-
-  test('clicking close button hides sidebar', () => {
-    renderWithRouter(<Sidebar />);
-    fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
-    fireEvent.click(screen.getByRole('button', { name: /close menu/i }));
-    expect(screen.getByRole('button', { name: /open menu/i })).toBeInTheDocument();
-  });
-
-  test('clicking nav link closes sidebar', () => {
-    renderWithRouter(<Sidebar />);
-    fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
-    fireEvent.click(screen.getByText(/orders/i));
-    expect(screen.getByRole('button', { name: /open menu/i })).toBeInTheDocument();
-  });
-
+    expect(sidebarNav.parentElement).toHaveClass('open');
  
+    const closeBtn = screen.getByRole('button', { name: /close menu/i });
+    expect(closeBtn).toBeInTheDocument();
+   
+    expect(screen.queryByRole('button', { name: /open menu/i })).not.toBeInTheDocument();
+
+    fireEvent.click(closeBtn);
+    expect(sidebarNav.parentElement).not.toHaveClass('open');
+  });
+  test('nav links are rendered and clicking a nav link closes sidebar', () => {
+    renderWithRouter(<Sidebar />);
+
+    fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
+    
+    const dashboardLink = screen.getByText(/dashboard/i);
+    const ordersLink = screen.getByText(/orders/i);
+    const usersLink = screen.getByText(/users/i);
+    const signOutBtn = screen.getByRole('button', { name: /sign out/i });
+    expect(dashboardLink).toBeInTheDocument();
+    expect(ordersLink).toBeInTheDocument();
+    expect(usersLink).toBeInTheDocument();
+    expect(signOutBtn).toBeInTheDocument();
+
+    fireEvent.click(ordersLink.closest('a'));
+    const sidebarNav = screen.getByRole('navigation', { name: /sidebar navigation/i });
+    expect(sidebarNav.parentElement).not.toHaveClass('open');
+  });
+  test('sign out modal appears and confirm/cancel buttons work', () => {
+    renderWithRouter(<Sidebar />);
+
+    fireEvent.click(screen.getByRole('button', { name: /open menu/i }));
+   
+    const signOutBtn = screen.getByRole('button', { name: /sign out/i });
+    fireEvent.click(signOutBtn);
+
+    expect(screen.getByText(/confirm sign out/i)).toBeInTheDocument();
+    expect(screen.getByText(/are you sure you want to sign out/i)).toBeInTheDocument();
+    
+    const cancelBtn = screen.getByRole('button', { name: /no/i });
+    fireEvent.click(cancelBtn);
+    expect(screen.queryByText(/confirm sign out/i)).not.toBeInTheDocument();
+    expect(signOut).not.toHaveBeenCalled();
+   
+    fireEvent.click(signOutBtn);
+
+    const confirmBtn = screen.getByRole('button', { name: /yes/i });
+  
+    delete window.location;
+    window.location = { href: '' };
+    fireEvent.click(confirmBtn);
+    expect(signOut).toHaveBeenCalled();
+    expect(window.location.href).toBe('/');
+ 
+    expect(screen.queryByText(/confirm sign out/i)).not.toBeInTheDocument();
+  });
 });

@@ -62,7 +62,7 @@ const Orders = () => {
 
   return (
     <div className='orders_container'>
-      <h2 className='order'>Orders page</h2>
+      <h2 className='order'>Orders</h2>
       <div className="top-section">
 
         <div className="live-groups">
