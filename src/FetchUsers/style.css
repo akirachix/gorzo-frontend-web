@@ -154,7 +154,9 @@ margin-left: 30px;
 }
   .topcards-container {
     gap: 200px;
+    width: 97%;
   }
+
   .dashboard-container {
     margin-left: 18%;
   }
@@ -168,6 +170,11 @@ margin-left: 30px;
     width: 120px;
     font-size: 16px;
   }
+   .search-icon {
+  left: 370px;
+   }
+      .topcard-number {
+  font-size: 50px;}
 }
 @media screen and (width: 1024px) {
 .dashboard-container{
@@ -191,6 +198,16 @@ margin-left: 30px;
     height: 30px;
     font-size: 15px;
   }
+    .search-icon {
+  left: 370px;
+   }
+   .topcard-number {
+  font-size: 50px;
+  font-weight: bold;
+  border: #E9E3E0 solid 1px;
+  padding: 0% 3% 0% 3%;
+  border-radius: 50%;
+}
 }
 
 

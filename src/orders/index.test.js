@@ -1,13 +1,10 @@
 import React from 'react';
 import { render, screen, fireEvent, within } from '@testing-library/react';
-
 import Orders from '.';
-
 jest.mock('../hooks/usefetchorders', () => ({
   useFetchOrders: jest.fn(),
   useFetchGroups: jest.fn(),
 }));
-
 jest.mock('react-icons/fa', () => ({
   FaSearch: () => <span data-testid="search-icon" />,
 }));

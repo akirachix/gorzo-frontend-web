@@ -42,12 +42,12 @@ padding-left: 5em;
 }
 .search{
    border: 1px solid#F57C00;
-   margin-left: 21em;
+   margin-left: 17.5em;
    height: 2.8em;
    background-color: white;
    border-radius: 1vw;
    padding-left: 1em;
-  width: 22em;
+  width: 20em;
 text-align: left;
 margin-top: -1em;
 margin-bottom: 2em;
@@ -162,16 +162,16 @@ margin-bottom: 1%;
 
 
 
-@media only screen and  (min-width:1024px)and (max-width:1279px){
+@media only screen and  (min-width:1024px) and (max-width:1279px){
 
   .top-section{
-   margin-left: 10%;
+   margin-left: 15%;
   }
   .order{
-   margin-left: 17%;
+   margin-left: 22%;
   }
   .pie_info{
-      width: 50%; 
+      width: 55%; 
   }
     .live-groups {
 width: 20em;
@@ -185,23 +185,23 @@ width: 20em;
   }
   
 .search{
- margin-left: 18%;
-
-  }
+   font-size: 13px;
+}
   .search_icon{
-   /* border: 1px solid; */
- margin-left: -2%;
 
+   font-size: 12px;
   }
    .second_part{
-       margin-left: 10%;
+       margin-left: 14%;
        width: 85%;
+      
       
    }
    .table_data{
  /* border: 1px solid; */
- width: 113%;
+ width: 105%;
    }  
+ 
  
    .top-section{
 gap: 5%;
@@ -210,6 +210,10 @@ gap: 5%;
 @media only screen and (max-width:1280px)  {
    .search{
       width: 21%;
+      margin-left: 22%;
+   }
+     .search_icon{
+      margin-left: -2%;
    }
    .second_part{
       width: 76%;
