@@ -1,25 +1,21 @@
 .topcards-container {
+width: 100%;
   display: flex;
-  justify-content: space-between;
+ gap: 420px;
   margin: 0% 1% 2% 1%;
   text-align: center;
- 
-
 }
 h1{
-
-  color: #f97316; 
+  color: #F97316;
   font-size: 35px;
- 
 }
 .topcard {
-  background-color: #f97316;
+  background-color: #F97316;
   color: white;
   padding: 20px 20px 20px 0px;
   border-radius: 12px;
   width: 550px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  
 }
 .topcard-title {
   font-size: 25px;
@@ -29,12 +25,10 @@ h1{
 .topcard-number {
   font-size: 67px;
   font-weight: bold;
-  border: #e9e3e0 solid 1px;
+  border: #E9E3E0 solid 1px;
   padding: 0% 3% 0% 3%;
   border-radius: 50%;
 }
-
-
 .users-container {
   padding: 24px;
   background-color: white;
@@ -44,7 +38,7 @@ h1{
 }
 .users-title {
   font-size: 24px;
-  color: #f97316; 
+  color: #F97316;
   margin-bottom: 16px;
 }
 .users-table {
@@ -52,40 +46,33 @@ h1{
   width: 95%;
   border-collapse: collapse;
   font-size: 14px;
-  
 }
 .users-table thead {
-  background-color: #ffedd5; 
-  color: #ea580c;
+  background-color: #FFEDD5;
+  color: #EA580C;
   text-align: left;
-
 }
 .users-table th,
 .users-table td {
   padding: 15px 0px 9px 0px ;
-  border-block: #e2c799 solid 1px;
-  border-bottom: 1px solid #e2c799;
+  border-block: #E2C799 solid 1px;
+  border-bottom: 1px solid #E2C799;
 }
 .users-table tr:hover {
-  background-color: #fff7ed;
+  background-color: #FFF7ED;
 }
 .active {
   color:#ea580c;
- 
   background: white;
   font-weight: bold;
 }
-
 .inactive {
   color: red;
   font-weight: bold;
 }
-
-
-
 .search-input {
   padding: 12px;
-  border: 1px solid  #ebb791; 
+  border: 1px solid  #EBB791;
   margin-left: 1%;
   border-radius: 15px;
   margin-bottom: 10px;
@@ -95,28 +82,25 @@ h1{
   padding-left: 1%;
 }
 .search-container {
-
   position: relative;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
  .search-icon {
- position: absolute; 
-  left: 400px; 
+ position: absolute;
+  left: 400px;
   top: 13px;
-  color: #f97316;
+  color: #F97316;
    }
 .pagination-controls {
   display: flex;
   justify-content: center;
   gap: 40px;
   margin-top: 1%;
-
-
 }
 .pagination-controls button {
-  background-color: #f97316; 
+  background-color: #F97316;
   border: none;
   border-radius: 10px;
   font-size: 20px;
@@ -127,48 +111,93 @@ h1{
   transition: background-color 0.3s ease;
 }
 .pagination-controls button:hover {
-  background-color: #ea580c; 
+  background-color: #EA580C;
   color: white;
 }
 .pagination-controls button:disabled {
-  background-color: #f3f4f6; 
+  background-color: #F3F4F6;
   cursor: not-allowed;
-  color: #f8d0b3; 
+  color: #F8D0B3;
 }
 .pagination-controls button.secondary-button {
-  background-color: #f8d0b3;
-  color: #ea580c;
-} 
-
+  background-color: #F8D0B3;
+  color: #EA580C;
+}
 .span{
   margin-top: 1%;
 }
-
-
-
 .dashboard-container{
   margin-top:3%;
   margin-left: 13%;
+  width: 100%;
 }
-
 .vendor{
- color: #0b6e6b;
+ color: #0B6E6B;
 }
-
 .customer{
-  color: #3f4c86;  
+  color: #3F4C86;
 }
 .admin{
-  color: #c05314;
+  color: #C05314;
 }
-
 .no-results{
   text-align: center;
   font-size: 20px;
-  color: #d85d06; 
+  color: #D85D06;
   margin-top:18%;
 margin-bottom: 15%;
-
 }
+@media screen and (max-width:1366px) and (min-width: 1025px) {
+.dashboard-container{
+ width: 80%;
+margin-left: 30px;
+}
+  .topcards-container {
+    gap: 200px;
+  }
+  .dashboard-container {
+    margin-left: 18%;
+  }
+  .table-wrapper {
+    width: 100%;
+  }
+  .pagination-controls{
+   margin-left: 10%;
+  }
+  .pagination-controls button {
+    width: 120px;
+    font-size: 16px;
+  }
+}
+@media screen and (width: 1024px) {
+.dashboard-container{
+ width: 60%;
+}
+  .topcards-container {
+    gap: 200px;
+    width: 80%;
+  }
+  .dashboard-container {
+    margin-left: 25%;
+  }
+  .table-wrapper {
+    width: 90%;
+  }
+  .pagination-controls{
+   margin-left: 10%;
+  }
+  .pagination-controls button {
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+
+
 
 

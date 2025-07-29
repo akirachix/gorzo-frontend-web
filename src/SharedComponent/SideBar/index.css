@@ -137,7 +137,7 @@ margin-left: 12%;
   background: #C0C0C0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   .sidebar {
     transform: translateX(-100%);
   }

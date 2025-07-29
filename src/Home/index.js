@@ -30,7 +30,7 @@ function Home() {
         </div>
 
         <div id="groupPerformance">
-          <h2 id="ordersHeading">Group Buys Created vs Completed</h2>
+          <h2 id="ordersHeading">Created  vs Completed Group Buys</h2>
           <GroupChart />
         </div>
       </div>

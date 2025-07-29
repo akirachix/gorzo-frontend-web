@@ -19,7 +19,7 @@ function GroupChart() {
       series={[
         {
           data: chartData.allGroupCounts,    
-          label: "All Groups",
+          label: "Created Groups",
           color: "green"
         },
         {

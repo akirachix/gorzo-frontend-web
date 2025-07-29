@@ -1,22 +1,25 @@
 import './index.css'
 import * as React from 'react';
 import { PieChart } from '@mui/x-charts/PieChart';
-import { useFetchOrders } from '../hooks/usefetchorders';
+import { useFetchOrders,useFetchGroups } from '../hooks/usefetchorders';
 import { useState, useEffect, useMemo } from 'react';
 import { FaSearch } from "react-icons/fa";
 
 const Orders = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const { loading, error, orders } = useFetchOrders();
-
+  const { orders,loading:ordersLoading, error:ordersError} = useFetchOrders();
+  const { groups,loading:groupsLoading,error:groupsError } = useFetchGroups();
+ 
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8; 
 
 
   const pieData = [
-    { label: 'Individual orders', value: orders.filter(o => o.order_type.toLowerCase() === 'individual').length, color: '#F5E4E4' },
-    { label: 'Group orders', value: orders.filter(o => o.order_type.toLowerCase() === 'group').length, color: '#F57C00' },
+    { label: 'Individual orders', 
+      value: orders.filter(o => (o.order_type??'').toLowerCase() === 'individual').length, color: '#F5E4E4' },
+    { label: 'Group orders', 
+      value: orders.filter(o =>( o.order_type??'').toLowerCase() === 'group').length, color: '#F57C00' },
   ];
 
   const settings = {
@@ -53,13 +56,6 @@ const Orders = () => {
     }
   }, [filteredOrders, currentPage, totalPages]);
 
-  if (loading) {
-    return <h1>loading ...</h1>;
-  }
-  if (error) {
-    return <h1>{error}</h1>;
-  }
-
   return (
     <div className='orders_container'>
       <h2 className='order'>Orders</h2>
@@ -67,12 +63,14 @@ const Orders = () => {
 
         <div className="live-groups">
           <h3>Active Groups</h3>
+          
           <ul>
-            {orders.filter(o => o.order_type.toLowerCase() === 'group').map(group => (
-              <li key={`${group.group_id}-${group.order_id}`}>
-                <span>{group.order_type}</span>
-                <span>{group.created_at.split('T')[0]}</span>
-              </li>
+           
+            {groups.map(group => (
+               <li key={`${group.liveGroup_id}`}>
+                  <span>{group.group_name}</span>
+                <span>{(group.start_time ||'').split('T')[1].split('Z')[0].split('.')[0].slice(0, 5)}</span>
+               </li>
             ))}
           </ul>
         </div>
@@ -112,11 +110,14 @@ const Orders = () => {
 
       <div className='second_part'>
         <div className='table_data'>
-          <h3>Order ID</h3>
+       
+            <h3 className='type'>Type</h3>
           <h3>Price</h3>
-          <h3 className='type'>Type</h3>
-          <h3 className='date'>Date</h3>
+        
+       
           <h3>Status</h3>
+             <h3 className='date'>Date</h3>
+                <h3>Time</h3>
         </div>
 
         {paginatedOrders.map(data => {
@@ -140,14 +141,14 @@ const Orders = () => {
             }
           }
           return (
-            <div key={data.order_id} className='table_data'>
-              <p>{data.order_id}</p>
+            <div key={data.order_id}data-testid={`order-row-${data.order_id}`} className='table_data'>
+               <p>{data.order_type}</p>
               <p>{data.total_amount}</p>
-              <p>{data.order_type}</p>
-              <p>{data.created_at.split('T')[0]}</p>
               <p className={`status ${statusClass}`}>
                 {data.order_status}
               </p>
+                  <p>{data.created_at.split('T')[0]}</p>
+                    <p>{data.created_at.split('T')[1].split('Z')[0].split('.')[0].slice(0, 5)}</p>
             </div>
           );
         })}
