@@ -56,6 +56,18 @@ const Orders = () => {
     }
   }, [filteredOrders, currentPage, totalPages]);
 
+  if (ordersLoading || groupsLoading) {
+  return <div>Loading...</div>;
+}
+
+if (ordersError) {
+  return <div>Error loading orders: {ordersError}</div>;
+}
+
+if (groupsError) {
+  return <div>Error loading groups: {groupsError}</div>;
+}
+
   return (
     <div className='orders_container'>
       <h2 className='order'>Orders</h2>
