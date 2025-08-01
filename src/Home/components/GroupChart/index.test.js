@@ -5,43 +5,46 @@ import useGroupChartData from "../../../hooks/useGroupChartData";
 
 jest.mock('../../../hooks/useGroupChartData');
 
-describe("GroupChart component", () => {
-  test("displays loading message initially", () => {
+describe('GroupChart component', () => {
+  it('shows loading message while loading', () => {
     useGroupChartData.mockReturnValue({
-      chartData: {},
       loading: true,
       error: null,
+      chartData: null,
     });
 
     render(<GroupChart />);
-    expect(screen.getByText(/loading chart data/i)).toBeInTheDocument();
+    expect(screen.getByText(/Loading chart data/i)).toBeInTheDocument();
   });
 
-  test("displays error message on fetch failure", () => {
+  it('shows error message if error occurred', () => {
     useGroupChartData.mockReturnValue({
-      chartData: {},
       loading: false,
-      error: "Something went wrong",
+      error: new Error('Failed to load'),
+      chartData: null,
     });
 
     render(<GroupChart />);
-    expect(screen.getByText(/error loading data/i)).toBeInTheDocument();
+    expect(screen.getByText(/Error loading data/i)).toBeInTheDocument();
   });
 
-  test("renders BarChart with correct data", () => {
+  it('renders BarChart with correct props when data is loaded', () => {
+    const mockData = {
+      months: ['Jan', 'Feb', 'Mar'],
+      allGroupCounts: [10, 20, 15],
+      completedGroupCounts: [5, 15, 10],
+    };
+
     useGroupChartData.mockReturnValue({
-      chartData: {
-        months: ["January", "February"],
-        allGroupCounts: [3, 5],         
-        completedGroupCounts: [2, 4],
-      },
       loading: false,
       error: null,
+      chartData: mockData,
     });
 
-    render(<GroupChart />);
-
-    expect(screen.getByText(/all groups/i)).toBeInTheDocument();
-    expect(screen.getByText(/completed groups/i)).toBeInTheDocument();
+    const { container } = render(<GroupChart />);
+    
+  
+    expect(container.textContent).toMatch(/Created Groups/i);
+    expect(container.textContent).toMatch(/Completed Groups/i);
   });
 });
