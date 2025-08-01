@@ -48,5 +48,23 @@ export const fetchOrders = async () => {
   } catch (error) {
     console.error('fetchOrders error:', error);
     throw new Error(error.message ?? 'An error occurred while fetching orders');
-  }
+  } 
 };
+export const fetchGroups = async () => {
+  try {
+    const result = await fetchJson(`${baseUrl}LiveGroup/`);
+    if (!Array.isArray(result)) {
+      console.error('fetchOrders error: Result is not an array', result);
+      throw new Error('API response is not an array');
+    }
+    return result;
+  } catch (error) {
+    console.error('fetchOrders error:', error);
+    throw new Error(error.message ?? 'An error occurred while fetching orders');
+  } 
+};
+
+
+
+
+

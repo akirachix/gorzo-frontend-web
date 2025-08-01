@@ -1,14 +1,11 @@
 import { useEffect , useState} from "react";
-import {fetchOrders} from '../utils/fetchorders'
+import {fetchOrders,fetchGroups} from '../utils/fetchorders'
 
 
 export const useFetchOrders = ()=>{
    const [orders , setorders]= useState([]);
    const [loading , setLoading] = useState(false)
    const [error , setError] = useState(null)
-
-
-
 const fetchorders = async ()=>{
    try{
        setLoading(true)
@@ -33,3 +30,33 @@ useEffect(()=>{
    },[])
 return {loading, error , orders}
 }
+
+export const useFetchGroups = ()=>{
+   const [groups , setgroups]= useState([]);
+   const [loading , setLoading] = useState(false)
+   const [error , setError] = useState(null)
+const fetchgroups = async ()=>{
+   try{
+       setLoading(true)
+       const response = await fetchGroups()
+  
+
+       const data = response
+       console.log({data});
+       
+       
+       setgroups(data)
+   }
+   catch (error){
+       setError(error.message ?? 'An error Occured')
+   }
+   finally{
+       setLoading(false)
+   }
+}
+useEffect(()=>{
+       fetchgroups()
+   },[])
+return {loading, error , groups}
+}
+

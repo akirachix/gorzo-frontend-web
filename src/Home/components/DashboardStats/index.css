@@ -3,12 +3,41 @@
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
      width: 75vw;
     padding: 3%;
-     margin-left: 19em;
+     margin-left: 25em;
       display: grid;
      grid-template-columns: repeat(4, 1fr);
-   gap: 50px;  
-
+   gap: 50px;
 }
-
-
-
+@media screen and (width:1024px){
+  .usersData{
+     width: 77vw;
+    padding: 3%;
+    padding-left: 25px;
+     margin-left: 30em;
+      display: grid;
+     grid-template-columns: repeat(4, 0fr);
+   gap: 30px;
+}
+}
+@media screen and (width:1280px){
+  .usersData{
+     width: 75vw;
+    padding: 3%;
+    padding-left: 50px;
+     margin-left: 32em;
+      display: grid;
+     grid-template-columns: repeat(4, 1fr);
+   gap: 10px;
+}
+}
+@media only screen and (min-width:1360px) and (max-width:1600px){
+    .usersData{
+     width: 75vw;
+    padding: 3%;
+    padding-left: 50px;
+     margin-left: 18em;
+      display: grid;
+     grid-template-columns: repeat(4, 1fr);
+   gap: 10px;
+}
+}

@@ -30,11 +30,11 @@ body {
   text-decoration: none;
   padding: 12px 16px;
   margin-left: -16px;
-  width: calc(100% + 8px);
+  width: calc(100% + 19px);
   border-radius: 0 20px 20px 0;
   transition: all 0.3s ease;
   font-family: 'Manrope', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .nav-link.sign-out {
@@ -137,7 +137,7 @@ margin-left: 12%;
   background: #C0C0C0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 100px) {
   .sidebar {
     transform: translateX(-100%);
   }
@@ -160,6 +160,24 @@ margin-left: 12%;
     padding: 0;
   }
 }
+@media only screen and (min-width:1001px)and (max-width:1024px) {
+
+  .sidebar {
+  background-color: #F57C00;
+  color: white;
+  width: 10px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+ 
+
+  
+}
 @media (min-width: 769px) and (max-width: 1000px) {
   #habaLogo {
     width: 22vw;
@@ -168,11 +186,12 @@ margin-left: 12%;
   }
 }
 @media (width: 1024px) {
-  .sidebar {
-    width: 310px;
-  }
+.sidebar{
+  width: 20%;
+}
+  
   #habaLogo {
-    width: 24vw;
+    width: 20vw;
     padding-top: 15px;
     padding-left: 30px;
   }

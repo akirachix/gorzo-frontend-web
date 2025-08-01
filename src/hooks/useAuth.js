@@ -35,7 +35,7 @@ export function useSignIn() {
 
   const validate = () => {
     if (!phone || !pin) {
-      setError('Please enter both phone number and PIN');
+      setError('Please enter both Phone number and PIN');
       return false;
     }
     const phoneRegex = /^\+?\d{10,15}$/;
